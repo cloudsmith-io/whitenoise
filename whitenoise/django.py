@@ -98,7 +98,7 @@ class DjangoWhiteNoise(WhiteNoise):
         # If the static URL function maps the name without hash
         # back to the original URL, then we know we've got a
         # versioned filename
-        if static_url and static_url.endswith(url):
+        if static_url and static_url.endswith(os.path.basename(url)):
             return True
         return False
 
